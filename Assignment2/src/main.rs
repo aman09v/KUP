@@ -19,7 +19,7 @@ fn fibonacci(num: i32){
         print!("Please enter a positive integer");
     }
     else if num == 1 {
-        print!("{}",n1)
+        print!("{}",n1);
     }
     else{
         for x in 0..num {
