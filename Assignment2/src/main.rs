@@ -3,6 +3,7 @@ use std::io;
 fn main() {
     println!("Hello, world!");
     let mut n = String::new();
+    print!("Enter the length of series ");
     io::stdin()
         .read_line(&mut n)
         .expect("failed to read input.");
@@ -14,7 +15,6 @@ fn fibonacci(num: i32){
     let mut n1: i32 = 0;
     let mut n2: i32 = 1;
     let mut next: i32 = 0;
-    print!("Enter the length of series ");
     if num <= 0 {
         print!("Please enter a positive integer");
     }
