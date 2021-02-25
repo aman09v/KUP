@@ -14,5 +14,5 @@ pub fn leap() {
         }
         index+=1;
     }
-    print!("{}",count);
+    println!("leap years are = {}",count);
 }
