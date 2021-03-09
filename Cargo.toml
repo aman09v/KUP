@@ -3,4 +3,6 @@ panic = 'unwind'
 
 [workspace]
 
-members = []
+members = [
+  "/*",
+]
