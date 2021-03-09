@@ -4,6 +4,3 @@ panic = 'unwind'
 
 [workspace]
 
-members = [
-    "Assignments/*",
-]
