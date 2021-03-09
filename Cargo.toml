@@ -1,8 +1,10 @@
+[package]
+name = "kup"
+version = "0.1.0"
+authors = ["aman09v <aman2909verma@gmail.com>"]
+edition = "2018"
+
 [profile.release]
 panic = 'unwind'
 
 [workspace]
-
-members = [
-  "/*",
-]
