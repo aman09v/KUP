@@ -12,14 +12,14 @@ pub fn duplicate_finder(string_to_check: &str) -> String {
     let mut str_vec: Vec<char> = string_to_check.chars().collect();
     let mut output: String = "".to_string();
     let mut count = 0;
-    for i in 0..string_to_check.len() {
-        for j in i + 1..string_to_check.len() {
-            if str_vec[i] == str_vec[j] && str_vec[i] != '0' {
+    for index1 in 0..string_to_check.len() {
+        for index2 in index1 + 1..string_to_check.len() {
+            if str_vec[index1] == str_vec[index2] && str_vec[index1] != '0' {
                 if count == 0 {
-                    output.push(str_vec[i]);
+                    output.push(str_vec[index1]);
                 }
                 count += 1;
-                str_vec[j] = '0';
+                str_vec[index2] = '0';
             }
         }
         count = 0;
