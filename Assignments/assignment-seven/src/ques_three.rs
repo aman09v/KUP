@@ -1,4 +1,4 @@
-/// This function gets desired output for even and odd position of strings.
+/// desired_output function gets desired output for even and odd position of strings.
 ///
 /// #Arguments
 ///
