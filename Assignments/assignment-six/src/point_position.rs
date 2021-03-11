@@ -12,7 +12,7 @@ pub enum Position {
     Origin,
 }
 
-/// This function finds the quadrant in which a point lies.
+/// position_finder function finds the quadrant in which a point lies.
 ///
 /// #Arguments
 ///
