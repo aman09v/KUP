@@ -1,4 +1,4 @@
-/// This function searches a pattern in a string.
+/// pattern_search function searches a pattern in a string.
 ///
 /// #Arguments
 ///
