@@ -2,7 +2,7 @@ mod ip_enum;
 mod point_position;
 mod test;
 
-/// This function uses functions to remove warning
+/// remove_unused_warnings function uses functions to remove warning
 ///
 /// #Arguments
 ///
