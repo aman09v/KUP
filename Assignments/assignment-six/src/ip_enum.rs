@@ -7,7 +7,7 @@ pub enum IpClass {
     None,
 }
 
-/// This function classifies ip addresses into classes.
+/// classify function classifies ip addresses into classes.
 ///
 /// #Arguments
 ///
