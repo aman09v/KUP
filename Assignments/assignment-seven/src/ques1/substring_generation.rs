@@ -1,4 +1,4 @@
-/// This function generates all possible substrings of a string.
+/// substring_generator function generates all possible substrings of a string.
 ///
 /// #Arguments
 ///
