@@ -17,7 +17,7 @@ impl Iterator for GeoProgression{
     /// Returns the Option enum object containing next value of GP.
     fn next(&mut self) ->Option<i32>{
         let out = self.current_number;
-        self.current_number = self.current_number*self.ratio;;
+        self.current_number = self.current_number*self.ratio;
         Some(out)
     }
 }
