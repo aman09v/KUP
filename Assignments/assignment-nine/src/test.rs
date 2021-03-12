@@ -39,10 +39,6 @@ mod tests {
             current_number: 1,
             ratio: 2,
         };
-        let mut out: Vec<i32> = Vec::new();
-        for i in gp.take(11) {
-            out.push(i);
-        }
-        assert_eq!(out, vec![1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]);
+        assert_eq!(gp.take(11), vec![1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]);
     }
 }
