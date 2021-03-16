@@ -52,28 +52,21 @@ mod tests {
     #[test]
     fn remove_duplicate_test() {
         let test_vec = vec![1, 2, 2, 1];
-
         assert_eq!(_delete_item(test_vec), [1, 2, 1]);
     }
     #[test]
     fn remove_nth_test() {
         let test_vec = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-        assert_eq!(
-            _drop_element(&test_vec, 3),
-            [1, 2, 4, 5, 6, 7, 8, 9, 10, 11]
-        );
+        assert_eq!(_drop_element(test_vec, 3), [1, 2, 4, 5, 6, 7, 8, 9, 10, 11]);
     }
     #[test]
     fn return_even_test() {
         let test_vec = vec![1, 21, 3, 4, 5];
-
         assert_eq!(_first_even(&test_vec), 4);
     }
     #[test]
     fn reverse_list_test() {
         let test_vec = vec![1, 2, 3, 4, 5];
-
         assert_eq!(_reverse_list(test_vec), [5, 4, 3, 2, 1]);
     }
 }

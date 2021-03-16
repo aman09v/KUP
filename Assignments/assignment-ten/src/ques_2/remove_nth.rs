@@ -1,28 +1,24 @@
 use log::info;
 
-/// _drop_element function deletes nth element from the vector.
+/// _drop_element function deletes every nth element from the vector.
 ///
 /// #Arguments
 ///
 /// vec : a vector containing i32 values.
-///
-/// position :  an i32 value containing position of element to be deleted.
+/// num : a i32 containing value to be deleted.
 ///
 /// #Return
 ///
 /// Returns vector of i32 containing result.
 
-pub fn _drop_element(vec: &[i32], position: i32) -> Vec<i32> {
-    let mut index: usize = 0;
-    let mut answer: Vec<i32> = Vec::new();
-    loop {
-        if index == (position - 1) as usize {
-            answer.extend_from_slice(&vec[..index]);
-            break;
+pub fn _drop_element(mut vec: Vec<i32>, num: i32) -> Vec<i32> {
+    let mut index = 0;
+    while index < vec.len() {
+        if num == vec[index] {
+            vec.remove(index);
         }
-        index += 1
+        index += 1;
     }
-    answer.extend_from_slice(&vec[index + 1..]);
     info!("The nth element is deleted");
-    answer
+    vec
 }
