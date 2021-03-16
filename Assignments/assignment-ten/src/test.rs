@@ -11,6 +11,7 @@ mod tests {
 
     #[test]
     fn sum_age_check() {
+        env_logger::init();
         let mut map = HashMap::new();
         map.insert("aman", 20);
         map.insert("karan", 19);
