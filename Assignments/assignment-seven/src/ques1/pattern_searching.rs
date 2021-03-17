@@ -1,3 +1,5 @@
+use log::info;
+
 /// pattern_search function searches a pattern in a string.
 ///
 /// #Arguments
@@ -24,6 +26,7 @@ pub fn pattern_search(str_to_check: String, pattern: String) -> String {
             }
 
             if count == pattern.len() {
+                info!("pattern found at {}", match_index);
                 return format!("pattern found at index {}", match_index);
             }
             temp_index += 1;

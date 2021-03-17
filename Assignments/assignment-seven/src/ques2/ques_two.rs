@@ -1,3 +1,5 @@
+use log::info;
+
 /// desired_output function gets desired output for even and odd position of strings.
 ///
 /// #Arguments
@@ -48,5 +50,6 @@ pub fn desired_output(input_str1: &str, input_str2: &str, input_str3: &str) -> S
         index += 1;
         count += 1;
     }
+    info!("returning desired output");
     output.iter().collect()
 }

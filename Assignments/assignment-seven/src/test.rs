@@ -2,10 +2,11 @@
 mod tests {
     use crate::ques1::pattern_searching::pattern_search;
     use crate::ques1::substring_generation::substring_generator;
-    use crate::ques_three::desired_output;
+    use crate::ques2::ques_two::desired_output;
 
     #[test]
     fn substring_check() {
+        env_logger::init();
         assert_eq!(substring_generator("pa".to_string()), ["p", "pa", "a"]);
     }
     #[test]

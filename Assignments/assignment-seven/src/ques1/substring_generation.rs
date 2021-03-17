@@ -1,3 +1,5 @@
+use log::info;
+
 /// substring_generator function generates all possible substrings of a string.
 ///
 /// #Arguments
@@ -20,5 +22,6 @@ pub fn substring_generator(input_str: String) -> Vec<String> {
             output.push(substr.to_string());
         }
     }
+    info!("returning substrings");
     output
 }
