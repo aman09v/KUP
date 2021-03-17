@@ -1,6 +1,6 @@
 use log::info;
 
-/// _delete_item function delete concurrent duplicate elements.
+/// delete_item function delete concurrent duplicate elements.
 ///
 /// #Arguments
 ///
@@ -10,7 +10,7 @@ use log::info;
 ///
 /// Returns vector of i32 values with deleted duplicate elements.
 
-pub fn _delete_item(vec: Vec<i32>) -> Vec<i32> {
+pub fn delete_item(vec: Vec<i32>) -> Vec<i32> {
     let mut out: Vec<i32> = Vec::new();
     for item in vec {
         let top = out.last();

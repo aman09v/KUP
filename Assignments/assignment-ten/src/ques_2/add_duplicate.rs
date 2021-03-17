@@ -1,6 +1,6 @@
 use log::info;
 
-/// _duplicate_element function adds duplicate of each element.
+/// duplicate_element function adds duplicate of each element.
 ///
 /// #Arguments
 ///
@@ -10,7 +10,7 @@ use log::info;
 ///
 /// Returns vector containing duplicate values.
 
-pub fn _duplicate_element(vec: &mut Vec<i32>) -> Vec<i32> {
+pub fn duplicate_element(vec: &mut Vec<i32>) -> Vec<i32> {
     let size = vec.len();
 
     for item in 0..size {

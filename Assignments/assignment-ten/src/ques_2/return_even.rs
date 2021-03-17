@@ -1,6 +1,6 @@
 use log::info;
 
-/// _first_even function returns the first even number from vector.
+/// first_even function returns the first even number from vector.
 ///
 /// #Arguments
 ///
@@ -10,7 +10,7 @@ use log::info;
 ///
 /// Returns i32 value containing first even number.
 
-pub fn _first_even(seq: &[i32]) -> i32 {
+pub fn first_even(seq: &[i32]) -> i32 {
     let mut index = 0;
     let value;
     loop {

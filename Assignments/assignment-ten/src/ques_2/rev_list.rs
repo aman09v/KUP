@@ -1,6 +1,6 @@
 use log::info;
 
-/// _reverse_list function reverse the vector.
+/// reverse_list function reverse the vector.
 ///
 /// #Arguments
 ///
@@ -10,7 +10,7 @@ use log::info;
 ///
 /// Returns vector containing reversed i32 values.
 
-pub fn _reverse_list(mut vec_to_reverse: Vec<i32>) -> Vec<i32> {
+pub fn reverse_list(mut vec_to_reverse: Vec<i32>) -> Vec<i32> {
     let mut out: Vec<i32> = Vec::new();
     let mut len = vec_to_reverse.len();
     while len > 0 {

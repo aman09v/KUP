@@ -1,6 +1,6 @@
 use log::info;
 
-/// _drop_element function deletes every nth element from the vector.
+/// drop_element function deletes every nth element from the vector.
 ///
 /// #Arguments
 ///
@@ -11,7 +11,7 @@ use log::info;
 ///
 /// Returns vector of i32 containing result.
 
-pub fn _drop_element(mut vec: Vec<i32>, num: i32) -> Vec<i32> {
+pub fn drop_element(mut vec: Vec<i32>, num: i32) -> Vec<i32> {
     let mut index = 0;
     while index < vec.len() {
         if num == vec[index] {
