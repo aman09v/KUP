@@ -34,7 +34,7 @@ pub fn nth_finder(position: i32, list: List) -> i32 {
 /// Return the i32 number containing nth number.
 
 pub fn recursion(position: i32, list: List, counter: i32) -> i32 {
-    info!("finds number at {} postion", position);
+    info!("finds number at {} position", position);
     match list {
         Nil => -1,
         Cons(current, _) if counter == position => current,
