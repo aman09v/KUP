@@ -14,17 +14,17 @@ use std::time::Duration;
 
 pub async fn print_table() {
     env_logger::init();
-    let first = async {
+    let table_2 = async {
         for index in 1..11 {
             debug!("2*{} = {} ", index, 2 * index);
             task::sleep(Duration::from_secs(1)).await;
         }
     };
-    let second = async {
+    let table_3 = async {
         for index in 1..11 {
             debug!("3*{} = {} ", index, 3 * index);
             task::sleep(Duration::from_secs(1)).await;
         }
     };
-    futures::join!(first, second);
+    futures::join!(table_2, table_3);
 }
