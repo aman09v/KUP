@@ -2,7 +2,7 @@ use async_std::task;
 use log::debug;
 use std::time::Duration;
 
-/// compute function is an async function that polls two futures simultaneously to print two tables in asynchronous manner.
+/// print_table function is an async function that polls two futures simultaneously to print two tables in asynchronous manner.
 ///
 /// #Arguments
 ///
@@ -12,7 +12,7 @@ use std::time::Duration;
 ///
 /// No return value.
 
-pub async fn compute() {
+pub async fn print_table() {
     env_logger::init();
     let first = async {
         for index in 1..11 {

@@ -2,7 +2,7 @@ use async_std::task;
 use log::debug;
 use std::time::Duration;
 
-/// run function is an async function that polls two futures simultaneously to run two task in asynchronous manner.
+/// run_task function is an async function that polls two futures simultaneously to run two task in asynchronous manner.
 ///
 /// #Arguments
 ///
@@ -12,7 +12,7 @@ use std::time::Duration;
 ///
 /// No return value.
 
-pub async fn run() {
+pub async fn run_task() {
     let first = async {
         for _index in 0..10 {
             debug!("running task 1");
