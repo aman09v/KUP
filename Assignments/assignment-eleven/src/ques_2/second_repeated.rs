@@ -30,7 +30,7 @@ pub fn second_repeat_finder(list: List) -> i32 {
 /// Return the i32 number containing second repeated number.
 
 pub fn recursion(prev: i32, list: List, counter: i32) -> i32 {
-    info!("finds first repeated number");
+    info!("finds second repeated number");
     match list {
         Nil => -1,
         Cons(current, _) if current == prev && counter == 1 => current,
