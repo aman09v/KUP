@@ -18,13 +18,12 @@ impl Books {
     ///
     /// #Return
     ///
-    /// No return value.
+    /// Returns Result type object denoting if the books were displayed.
 
-    pub fn display_all_books(&self) {
-        env_logger::init();
+    pub fn display_all_books(&self) -> Result<i32, i32> {
         if self.accession_no.is_empty() {
             warn!("Empty collection");
-            return;
+            return Err(0);
         }
         for index in 0..self.accession_no.len() {
             info!("Book {} details ", index + 1);
@@ -33,6 +32,7 @@ impl Books {
             info!("Title  - {}", self.title[index].to_owned());
             info!("Issue status  - {}", self.issue[index]);
         }
+        Ok(1)
     }
 
     /// add_book method add a book in Books structure.
@@ -43,18 +43,19 @@ impl Books {
     ///
     /// #Return
     ///
-    /// No return value.
+    /// Returns Result type object denoting if the book was added.
 
-    pub fn add_book(&mut self, book: Books) {
+    pub fn add_book(&mut self, book: Books) -> Result<i32, i32> {
         if self.accession_no.contains(&book.accession_no[0]) {
             error!("Book already exists");
-            return;
+            return Err(0);
         }
         self.accession_no.extend(book.accession_no.iter().cloned());
         self.author.extend(book.author.iter().cloned());
         self.title.extend(book.title.iter().cloned());
         self.issue.extend(book.issue.iter().cloned());
         info!("Book added");
+        Ok(1)
     }
 
     /// display_books_by_author method displays all books in Books structure that have a particular author.
@@ -65,11 +66,12 @@ impl Books {
     ///
     /// #Return
     ///
-    /// No return value.
+    /// Returns Result type object denoting if the book of author is present.
 
-    pub fn display_books_by_author(&self, author: String) {
+    pub fn display_books_by_author(&self, author: String) -> Result<i32, i32> {
         if !self.author.contains(&author) {
             warn!("No books by author {}", author);
+            return Err(0);
         }
         for index in 0..self.accession_no.len() {
             if self.author[index] == author {
@@ -80,6 +82,7 @@ impl Books {
                 info!("Issue status  - {}", self.issue[index]);
             }
         }
+        Ok(1)
     }
 
     /// display_books_by_title method displays all books in Books structure that have a particular title.
@@ -90,11 +93,12 @@ impl Books {
     ///
     /// #Return
     ///
-    /// No return value.
+    /// Returns Result type object denoting if the book of given title is present.
 
-    pub fn display_books_by_title(&self, title: String) {
+    pub fn display_books_by_title(&self, title: String) -> Result<i32, i32> {
         if !self.title.contains(&title) {
             warn!("No books by title {}", title);
+            return Err(0);
         }
         for index in 0..self.accession_no.len() {
             if self.title[index] == title {
@@ -104,6 +108,7 @@ impl Books {
                 info!("Issue status  - {}", self.issue[index]);
             }
         }
+        Ok(1)
     }
 
     /// count_books method counts all books in Books structure.
@@ -114,7 +119,7 @@ impl Books {
     ///
     /// #Return
     ///
-    /// an Option enum containing the number of books in collection.
+    /// Returns an Option enum containing the number of books in collection.
 
     pub fn count_books(&self) -> Option<i32> {
         let mut count = 0;
@@ -142,20 +147,17 @@ impl Books {
     ///
     /// #Return
     ///
-    /// No return value.
+    /// Returns Result type object denoting if the book was issued or not.
 
-    pub fn issue_book(&mut self, title: String) {
-        let mut found = 0;
+    pub fn issue_book(&mut self, title: String) -> Result<i32, i32> {
         for index in 0..self.accession_no.len() {
             if self.issue[index] == 1 && self.title[index] == title {
                 self.issue[index] = 0;
-                found = 1;
                 info!("Book issued");
-                break;
+                return Ok(1);
             }
         }
-        if found == 0 {
-            error!("Book not available");
-        }
+        error!("Book not available");
+        Err(0)
     }
 }
