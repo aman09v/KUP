@@ -48,6 +48,7 @@ impl Books {
     pub fn add_book(&mut self, book: Books) {
         if self.accession_no.contains(&book.accession_no[0]) {
             error!("Book already exists");
+            return;
         }
         self.accession_no.extend(book.accession_no.iter().cloned());
         self.author.extend(book.author.iter().cloned());
