@@ -1,18 +1,7 @@
-mod ip_enum;
-mod point_position;
-mod test;
-
-/// remove_unused_warnings function uses functions to remove warning
-///
-/// #Arguments
-///
-/// No arguments
-///
-/// #Return
-///
-/// No return type
-
-pub fn remove_unused_warnings() {
-    point_position::position_finder((1, 2));
-    ip_enum::classify((192, 1, 2, 3));
+pub mod ques_1 {
+    pub mod point_position;
 }
+pub mod ques_2 {
+    pub mod ip_enum;
+}
+pub mod test;
