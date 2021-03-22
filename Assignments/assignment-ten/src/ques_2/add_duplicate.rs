@@ -10,9 +10,11 @@ use log::info;
 ///
 /// Returns vector containing duplicate values.
 
-pub fn duplicate_element(vec: &mut Vec<i32>) -> Vec<i32> {
+pub fn duplicate_element(vec: &mut Vec<i32>) -> Option<Vec<i32>> {
     let size = vec.len();
-
+    if vec.is_empty() {
+        return None;
+    }
     for item in 0..size {
         let value = vec[item];
         println!("{}", value);
@@ -20,5 +22,5 @@ pub fn duplicate_element(vec: &mut Vec<i32>) -> Vec<i32> {
         vec.push(value);
     }
     info!("The duplicate element is inserted");
-    vec[size..].to_vec()
+    Some(vec[size..].to_vec())
 }

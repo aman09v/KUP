@@ -13,8 +13,11 @@ use std::collections::HashMap;
 ///
 /// Returns i32 element containing sum of ages of matched persons.
 
-pub fn sum_conditional(map: HashMap<&str, i32>, str: &str) -> i32 {
+pub fn sum_conditional(map: HashMap<&str, i32>, str: &str) -> Option<i32> {
     let mut sum = 0;
+    if map.is_empty() {
+        return None;
+    }
     let re = Regex::new(&*(r"".to_owned() + str)).unwrap();
     for person in map {
         if re.is_match(person.0) {
@@ -22,5 +25,5 @@ pub fn sum_conditional(map: HashMap<&str, i32>, str: &str) -> i32 {
         }
     }
     info!("The sum of ages is returned");
-    sum
+    Some(sum)
 }

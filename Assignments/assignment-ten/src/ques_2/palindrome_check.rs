@@ -14,13 +14,13 @@ use log::info;
 ///
 /// Returns bool value denoting if vector is palindrome or not.
 
-pub fn is_palindrome(vec_to_check: Vec<i32>, start: usize, end: usize) -> bool {
+pub fn is_palindrome(vec_to_check: Vec<i32>, start: usize, end: usize) -> Option<bool> {
     if start == end {
-        return true;
+        return Some(true);
     }
 
     if vec_to_check[start] != vec_to_check[end] {
-        return false;
+        return Some(false);
     }
 
     if start < end + 1 {
@@ -28,5 +28,5 @@ pub fn is_palindrome(vec_to_check: Vec<i32>, start: usize, end: usize) -> bool {
     }
     info!("The palindrome is checked");
 
-    true
+    Some(true)
 }

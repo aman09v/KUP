@@ -10,7 +10,7 @@ use log::info;
 ///
 /// Returns vector of i32 values with deleted duplicate elements.
 
-pub fn delete_item(vec: Vec<i32>) -> Vec<i32> {
+pub fn delete_item(vec: Vec<i32>) -> Option<Vec<i32>> {
     let mut out: Vec<i32> = Vec::new();
     for item in vec {
         let top = out.last();
@@ -24,5 +24,5 @@ pub fn delete_item(vec: Vec<i32>) -> Vec<i32> {
         }
     }
     info!("This is removing duplicates");
-    out
+    Some(out)
 }
