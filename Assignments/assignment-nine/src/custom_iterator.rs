@@ -1,6 +1,6 @@
 pub trait Iterator {
     fn next(&mut self) -> Option<i32>;
-    fn take(&mut self, size: i32) -> Vec<i32>;
+    fn take(&mut self, size: i32) -> Option<Vec<i32>>;
 }
 
 pub struct GeoProgression {
@@ -33,11 +33,11 @@ impl Iterator for GeoProgression {
     /// #Return
     ///
     /// Returns the Vector containing 'size' numbers in GP.
-    fn take(&mut self, size: i32) -> Vec<i32> {
+    fn take(&mut self, size: i32) -> Option<Vec<i32>> {
         let mut out: Vec<i32> = Vec::new();
         for _index in 0..size {
             out.push(self.next().unwrap());
         }
-        out
+        Some(out)
     }
 }

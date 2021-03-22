@@ -1,3 +1,5 @@
+use log::error;
+
 /// min function is generic over T bound by PartialOrd trait
 /// and finds the minimum items passed as arguments.
 ///
@@ -10,10 +12,13 @@
 ///
 /// Returns the minimum item
 
-pub fn min<T: std::cmp::PartialOrd>(item1: T, item2: T) -> T {
+pub fn min<T: std::cmp::PartialOrd>(item1: T, item2: T) -> Result<T, String> {
     if item1 < item2 {
-        item1
+        Ok(item1)
+    } else if item2 < item1 {
+        Ok(item2)
     } else {
-        item2
+        error!("values are equal");
+        Err("equal value".to_string())
     }
 }
