@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use crate::custom_iterator::{GeoProgression, Iterator};
+    use crate::custom_iterator::GeoProgression;
     use crate::generic::minimum::min;
     use crate::generic::sort::sort_array;
 
@@ -44,8 +44,8 @@ mod tests {
             ratio: 2,
         };
         assert_eq!(
-            gp.take(11).unwrap(),
-            vec![1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+            gp.next(),
+            Some(vec![1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024])
         );
     }
 }
